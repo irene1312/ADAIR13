@@ -1,0 +1,9 @@
+# Install PyTorch appropriate for the existing CUDA environment separately.
+# Do not replace a working torch/CUDA installation with the author's old env.yaml.
+numpy>=1.24
+scipy>=1.10
+h5py>=3.8
+einops>=0.6
+scikit-image>=0.20
+matplotlib>=3.7
+pytest>=7

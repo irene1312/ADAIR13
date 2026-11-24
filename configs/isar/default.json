@@ -1,0 +1,21 @@
+{
+  "manifest": "manifests/isar_sim.json",
+  "data_root": null,
+  "output_root": "experiments/isar",
+  "seed": 10,
+  "noise_seed": 20261027,
+  "model": {
+    "inp_channels": 2, "out_channels": 2, "dim": 48,
+    "num_blocks": [4, 6, 6, 8], "num_refinement_blocks": 4,
+    "heads": [1, 2, 4, 8], "ffn_expansion_factor": 2.66,
+    "LayerNorm_type": "WithBias", "bias": false, "decoder": true
+  },
+  "train": {
+    "steps": 10000, "batch_size": 8, "micro_batch_size": 8, "patch_size": 128,
+    "lr": 0.0001, "weight_decay": 0.0001, "grad_clip": 0.1,
+    "noise_mode": "uniform", "snr_range": [-5, 5], "amplitude_l1_weight": 0,
+    "validate_every": 1000, "save_every": 1000, "log_every": 10
+  },
+  "validation": {"snrs": [-5, 0, 5], "selection_metric": "restored_psnr", "limit": null},
+  "test": {"snrs": [-5, 0, 5], "normalization": "per_image", "save_complex": "all"}
+}

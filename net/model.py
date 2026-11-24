@@ -389,9 +389,9 @@ class AdaIR(nn.Module):
         self.decoder = decoder
         
         if self.decoder:
-            self.fre1 = FreModule(dim*2**3, num_heads=heads[2], bias=bias)
-            self.fre2 = FreModule(dim*2**2, num_heads=heads[2], bias=bias)
-            self.fre3 = FreModule(dim*2**1, num_heads=heads[2], bias=bias)            
+            self.fre1 = FreModule(dim*2**3, num_heads=heads[2], bias=bias, in_dim=inp_channels)
+            self.fre2 = FreModule(dim*2**2, num_heads=heads[2], bias=bias, in_dim=inp_channels)
+            self.fre3 = FreModule(dim*2**1, num_heads=heads[2], bias=bias, in_dim=inp_channels)
 
         self.encoder_level1 = nn.Sequential(*[TransformerBlock(dim=dim, num_heads=heads[0], ffn_expansion_factor=ffn_expansion_factor, bias=bias, LayerNorm_type=LayerNorm_type) for i in range(num_blocks[0])])
         

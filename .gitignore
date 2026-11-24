@@ -1,5 +1,13 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.local_deps/
+experiments/
+results/
+local_validation/
+*.pt
+*.pth
+*.npz
+*.mat
 *.py[cod]
 *$py.class
 
